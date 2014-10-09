@@ -16,25 +16,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9f-Ii-F8e">
-                                <rect key="frame" x="267" y="285" width="67" height="30"/>
-                                <state key="normal" title="Touch Me">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qaU-pb-SAd"/>
-                                </connections>
-                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oLg-rU-0Q0">
+                                <rect key="frame" x="201" y="299" width="194" height="2"/>
+                            </progressView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Zf-aL-ogV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="E9f-Ii-F8e" secondAttribute="centerX" id="Rrq-nC-ck4"/>
-                            <constraint firstAttribute="centerY" secondItem="E9f-Ii-F8e" secondAttribute="centerY" id="XTS-Z6-SxN"/>
+                            <constraint firstAttribute="centerX" secondItem="oLg-rU-0Q0" secondAttribute="centerX" constant="2" id="BLB-qk-O2s"/>
+                            <constraint firstItem="oLg-rU-0Q0" firstAttribute="centerX" secondItem="9Zf-aL-ogV" secondAttribute="centerX" id="Eft-cs-EXy"/>
+                            <constraint firstItem="oLg-rU-0Q0" firstAttribute="centerY" secondItem="9Zf-aL-ogV" secondAttribute="centerY" id="Xzb-dw-Gou"/>
+                            <constraint firstAttribute="centerY" secondItem="oLg-rU-0Q0" secondAttribute="centerY" id="cMB-9e-x5D"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Eft-cs-EXy"/>
+                                <exclude reference="Xzb-dw-Gou"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="9Zf-aL-ogV" id="qYF-eA-16x"/>
+                        <outlet property="progressView" destination="oLg-rU-0Q0" id="TiP-Re-4zi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="641" y="400"/>
         </scene>
     </scenes>
 </document>

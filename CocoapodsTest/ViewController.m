@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import <SVProgressHUD/SVProgressHUD.h>
 @interface ViewController ()
 
 @end
@@ -17,6 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+- (IBAction)buttonPressed:(id)sender {
+    NSLog(@"Button Touched");
+    [SVProgressHUD show];
+    [self performSelector:@selector(dismissHUD) withObject:nil afterDelay:3];
+}
+
+- (void)dismissHUD {
+    [SVProgressHUD dismiss];
 }
 
 - (void)didReceiveMemoryWarning {
